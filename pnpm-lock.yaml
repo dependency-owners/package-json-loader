@@ -21,8 +21,8 @@ importers:
         specifier: 24.3.0
         version: 24.3.0
       dependency-owners:
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 1.1.1
+        version: 1.1.1
       fs-fixture:
         specifier: 2.8.1
         version: 2.8.1
@@ -512,8 +512,8 @@ packages:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
     engines: {node: '>=4.0.0'}
 
-  dependency-owners@1.1.0:
-    resolution: {integrity: sha512-jZ2qhALFJ2BKzUn/64eZP3T6bfdQ9mFyyG2rHVvJwHaB4dec6TARfB7R19vnBQoGD+uBMq54CPeuyAtLmBJKnQ==}
+  dependency-owners@1.1.1:
+    resolution: {integrity: sha512-yC+uePXGxgTkVo3+JqTpjRhYwnNwS7oKygaPPC96EGoexAYJqhaT0xvbgLRzwWVVGIG+gmQWViJpDqgHeqHK+Q==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1412,9 +1412,9 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@dependency-owners/package-json-loader@1.0.0(dependency-owners@1.1.0)':
+  '@dependency-owners/package-json-loader@1.0.0(dependency-owners@1.1.1)':
     dependencies:
-      dependency-owners: 1.1.0
+      dependency-owners: 1.1.1
 
   '@esbuild/aix-ppc64@0.25.9':
     optional: true
@@ -1825,9 +1825,9 @@ snapshots:
 
   deep-extend@0.6.0: {}
 
-  dependency-owners@1.1.0:
+  dependency-owners@1.1.1:
     dependencies:
-      '@dependency-owners/package-json-loader': 1.0.0(dependency-owners@1.1.0)
+      '@dependency-owners/package-json-loader': 1.0.0(dependency-owners@1.1.1)
       '@stricli/core': 1.2.0
 
   dir-glob@3.0.1:

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { suite, test } from 'node:test';
 import { createFixture } from 'fs-fixture';
 
-import { canLoad, load } from '../src/index.js';
+import { canLoad, load } from '../src/index.ts';
 
 suite('canLoad', () => {
   test('should return true for package.json file', async () => {

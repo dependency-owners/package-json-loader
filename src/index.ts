@@ -1,6 +1,11 @@
-import type { DependencyLoader } from 'dependency-owners/loader';
+import type { Dependency, DependencyLoader } from 'dependency-owners/loader';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+
+const mapDependency = ([name, version]: [string, unknown]): Dependency => ({
+  name,
+  version: String(version),
+});
 
 /**
  * Check if the loader can handle the specified file.
@@ -14,12 +19,12 @@ export const canLoad = async function (filePath: string): Promise<boolean> {
 /**
  * Loads the package.json file and returns its dependencies.
  * @param {string} filePath The path of the package.json file to load.
- * @returns {Promise<string[]>} An array of dependencies.
+ * @returns {Promise<Dependency[]>} An array of dependencies.
  */
-export const load = async function (filePath: string): Promise<string[]> {
+export const load = async function (filePath: string): Promise<Dependency[]> {
   const pkg = JSON.parse(await fs.readFile(filePath, 'utf-8'));
   return [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.devDependencies || {}),
+    ...Object.entries(pkg.dependencies || {}).map(mapDependency),
+    ...Object.entries(pkg.devDependencies || {}).map(mapDependency),
   ];
 } satisfies DependencyLoader['load'];

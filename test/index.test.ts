@@ -33,8 +33,12 @@ suite('load', () => {
       }),
     });
     const deps = await load(fixture.getPath('package.json'));
-    assert.ok(deps.includes('lodash'));
-    assert.ok(deps.includes('jest'));
+    assert.ok(
+      deps.some((dep) => dep.name === 'lodash' && dep.version === '^4.17.21')
+    );
+    assert.ok(
+      deps.some((dep) => dep.name === 'jest' && dep.version === '^29.0.0')
+    );
   });
 
   test('should return empty array if no dependencies', async () => {

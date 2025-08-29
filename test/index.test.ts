@@ -46,6 +46,6 @@ suite('load', () => {
       'package.json': createPackageJson(),
     });
     const deps = await load(fixture.getPath('package.json'));
-    assert.deepEqual(deps, []);
+    assert.deepStrictEqual(deps, []);
   });
 });
